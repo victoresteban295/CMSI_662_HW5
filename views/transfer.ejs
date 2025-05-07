@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Transfer</title>
+        <link rel="stylesheet" href="/transfer.css">
+    </head>
+    <body>
+        <h1>Transfer Share</h1>
+        <% if (error) { %>
+            <div style="color: red;"><%= error %></div>
+        <% } %>
+       
+        <form method="POST" action="/transfer">
+            <label>Account ID</label>
+            <input name="targetAccountId" type="text" required/>
+
+            <label>Shares</label>
+            <input name="shareAmount" type="number" min="0" max="50" required/>
+
+            <input type="submit" value="Transfer" />
+        </form>
+
+        <p><a href="/dashboard">Back to Dashboard</a></p>
+    </body>
+</html>
